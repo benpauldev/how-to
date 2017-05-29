@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Scrolling Nav - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li>
+                        <a class="page-scroll" href="#setup">Setup</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#create-data">Create Data</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#google-engine">Google App Engine</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#train-model">Train the Model</a>
+                    </li>
+                     <li>
+                        <a class="page-scroll" href="#confirm-train">Confirm Training</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#query">Send Query</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#cleanup">Cleanup</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Section -->
+    
+    <section id="intro" class="intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Google Prediction API</h1>
+                    <p style="padding-top: 6">This guide will get you started with Google's Prediction API.</p>
+                    <div class="row" style="padding-top: 5%">
+                        <div class="col-md-12">
+                            <div class= "media">
+                                <img src="images/8ball.jpg" width="90%" height="90%" alt="8ball">
+                            </div>
+                        </div>
+                    </div>
+                    <p style="padding-top: 10%"><strong>About:</strong> Google's Prediction API provides a way to build machine learning models for your Google Cloud Platform applications. The models may be used to process data that can perform a variety of tasks. Potential uses include: spam detection, reccomendation systems, sentiment analysis, automatic completion, and many more. For this guide we will be using Node.js in Google's App Engine on the Cloud Platform </p>
+                    <a class="btn btn-default page-scroll" href="#setup">Let's get started!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Setup Section -->
+    <section id="setup" class="setup-section" style="padding-top: 5%">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Setup</h1>
+                    <div class="text-justify">
+                        <p style="padding-top: 10%"><strong>Step 1:</strong> Navigate to the projects page of your Google Cloud Platform account. Select or create a new project.  If new to Google Cloud Platform, create an account. The create count page can be found Here. </p>
+                        <a href="https://cloud.google.com" class="btn btn-info" role="button">Create Account</a>
+                        <p style="padding-top: 5%"><strong>Step 2:</strong> Enable billing for the selected project. This is necessary to use the Prediction API. You will not be charged for implementing the API for this training. Billing can be enabled by selecting the billing tab at the left of the dashboard for your selected project. If billing was never disabled for the selected project Google defautls the billing setting to "enabled". For more information about enabling the billing for the project please follow this link. </p>
+                        <a href="https://support.google.com/cloud/answer/6293499#enable-billing" class="btn btn-info" role="button">Enable Billing</a>
+                        <p style="padding-top: 5%"><strong>Step 3:</strong> Enable the Google Cloud Storage and Prediction APIs. From the dashboard window, select enable API's in the getting started section. From there you may click the link indicated by a <strong>+</strong>sign. Search for and enable the Prediction API, Google Cloud Storage JSON API, and Google Cloud Storage. Enable by selecting the enable button at the top. You may also simply select the button below while logged in to your Google Cloud Platform account.</p> 
+                        <a href="https://console.cloud.google.com/flows/enableapi?apiid=prediction,storage_component,storage_api&amp;_ga=1.167949218.2035046103.1494286454" class="btn btn-info" role="button">Enable APIs</a>
+                        <p style="padding-top: 5%"><strong>Step 4:</strong>The last step is to download the sample training data file. We will explain and use this later as we begin to use the Prediction API. You may download the training data here.
+                        </p>
+                        <a href="https://console.cloud.google.com/flows/enableapi?apiid=prediction,storage_component,storage_api&amp;_ga=1.167949218.2035046103.1494286454" class="btn btn-info" role="button">Download Training Data</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="create-data" class="create-data-section" style="padding-top: 5%">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Create Data</h1>
+                        <div class="text-justify">
+                            <p style="padding-top:10%"><strong> Creating Training Data:</strong> At this point we have all the tools needed to start creating and training data for our machine learning model. Essentially what we will be doing here is creating a machine that processes data we send to it. The machine makes a judgement on how to process our data based on prior knowlege. This is where creating data comes in. We need to create data and train that machine model with it to act as the machine's prior knowledge. We may do this by following these steps.
+                            </p>
+                            <div class="col-lg-10" class="text-justify" >
+                                <p style="padding-top: 5%"><strong>Step 1: </strong> From the Google Cloud Platform dashboard, navigate to the drop down menu in the top left of the screen.<img src="images/dropmenu.jpg" width="18%" height="18%" alt="dropmenu"> Select <u>Storage</u>. 
+                                </p>
+                                <p style="padding-top: 5%"><strong>Step 2:</strong> A window will appear in the middle of the browser if this is your first time using Google Cloud Platform. Select <u>Create Bucket</u>. If it is not your first time using the platform, select this button in your console window. <img src="images/createbucket.jpg" width="13%" height="13%" alt="createbucket">
+                                </p>
+                                <p style="padding-top: 5%"><strong>Step 3:</strong> Enter a globally unique name in the Name field.<img src="images/namefield.jpg" width="50%" height="50%" alt="namefield">
+                                 This name will be used for your storage bucket. If the name is not unique other Google Cloud users may have access to it. 
+                                </p>
+                                <p style="padding-top: 5%"><strong>Step 4:</strong> Keep the default settings in the remaining fields. These fields are for speciying the content type and accessability of the files stored in your bucket for now the default settings are fine. Select <u>Create</u>!
+                                </p>
+                                <p style="padding-top: 5%"><strong>Step 5:</strong> After the bucket has been created we can now store content. Select the <u>Upload Files</u> button. <img src="images/uploadfiles.jpg" width="15%" height="15%" alt="uploadfiles"> Navigate to and upload the file we downloaded in setup, <em style="color: blue">language_id.txt</em>. This is the training data we will use to train our model. 
+                                </p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Contact Section -->
+    <section id="google-engine" class="google-engine-section" style="padding-top: 5%">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Hosting on Google App Engine</h1>
+                        <div class="text-justify">
+                            <p style="padding-top: 10%"><strong>About: </strong>Google's App engine is a Google Cloud Platform based application server for hosting Google Cloud Applications. It is entirely possible to use Prediction API elseware, but for an understanding of the client and server side of this API, we will be using the APP engine. The language used to host on the server is optional. The example's in this guide will be presented in Node.js. 
+                            </p>
+                            <div class="text-justify">
+                                <p style="padding-top: 5%">
+                                    <strong>Creating App: </strong> Navigate and select the drop down menu at the left of your console. <img src="images/dropmenu.jpg" width="18%" height="18%" alt="dropmenu"> Select <u>App Engine</u> from the drop down menu. If it is your first time using Google App Engine navigate to the <em style="color: blue">"Your first app"</em> section and select Node.js from the <u>Select a language</u> button. I strongly reccommend following the quick start guide at the right of the screan to learn to start an App on the server using Node.js. If you have experience using Google App Engine create a new app using Node.Js within the project we created in setup. 
+                                </p>
+                                <p style="padding-top: 5%">
+                                    <strong> Programming the app to handle client requests:</strong>
+                                    Now that we have an application created we need to write some code to allow the application to accept requests. This will vary depending on the intention of the application. Here are some fundamental examples of code an app would need. Google has written these functions to be used specifically with the Prediction API. 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media" style="vertical-align: center">
+                            <img src="images/require.jpg" width="60%" height="60%" alt="require">
+                        </div>
+                        <div style="padding-top: 5%" class="text-justify">
+                            <p>
+                              <strong>Require: </strong> This function sets a variable prediction to handle requests to the application. It is passed two JSON pairs for the clients project name and path to a json keyfile (package.json). 
+                            </p>
+                        </div>
+                        <div class="media" style="vertical-align: center">
+                            <img src="images/models.jpg" width="50%" height="50%" alt="models">
+                        </div>
+                        <div style="padding-top: 5%" class="text-justify">
+                            <p>
+                              <strong>Handle Trained Models: </strong> This function accepts the models that have been trained to the application. It also accepts an error code to handle handle errors when requesting from the server. 
+                            </p>
+                        </div>
+                         <div class="media" style="vertical-align: center">
+                            <img src="images/existing.jpg" width="50%" height="50%" alt="existing">
+                        </div>
+                        <div style="padding-top: 5%" class="text-justify">
+                            <p>
+                              <strong>Handle Existing Models: </strong> This function references an existing trained model. It may then create and use that model as a variable.
+                            </p>
+                        </div>
+                         <div class="media" style="vertical-align: center">
+                            <img src="images/train.jpg" width="65%" height="65%" alt="train">
+                        </div>
+                        <div style="padding-top: 5%" class="text-justify">
+                            <p>
+                              <strong>Train: </strong> This function is called to train models. The function is passed a model name, description and user specified function for specific training requirements.
+                            </p>
+                        </div>
+                         <div class="media" style="vertical-align: center">
+                            <img src="images/query.jpg" width="65%" height="65%" alt="query">
+                        </div>
+                        <div style="padding-top: 5%" class="text-justify">
+                            <p>
+                              <strong>Query: </strong> This function handles API queries. It takes a specified type parameter and a function that handles errors and stores the response in a results variable. The results are returned in JSON. 
+                            </p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Model Section -->
+    <section id="train-model" class="train-model-section" style="padding-top: 5%">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Train the Model</h1>
+                        <div class="text-justify">
+                            <p style="padding-top: 5%"><strong>Training:</strong> Now that we have a host for our application we can contact that application with training data and train our model. For the purposes of this guide we will use provided training data.   
+                            </p>
+                            <div class="text-justify">
+                                <strong>Custom trianing data: </strong> To create custom training data, the process is fairly straightforward. Data is written in CSV format, or Comma Seperated Value format. The file is then uploaded to Google Cloud Storage in .txt format. When the Prediction API accepts a value as a query, the machine learning model will use this data to determine a response. 
+                            <div  style="padding-top: 5%">
+                                <strong>The CSV training file must follow these conventions:</strong>
+                            </div>    
+                            <div >
+                                <li style="padding-top: 5%">Maximum file size is 2.5GB</li>
+                                <li>You must have a minimum of six examples in your training file</li>
+                                <li>No header row is allowed</li>
+                                <li>Only one example is allowed per line. A single example cannot contain newlines, and cannot span multiple lines.</li>
+                                <li>Columns are separated by commas. Commas inside a quoted string are not column delimiters.</li>
+                                <li>The first column represents the value (numeric or string) for that example. If the first column is numeric, this model is a regression model; if the first column is a string, it is a categorization model. Each column must describe the same kind of information for that example.</li>
+                                <li>The column order of features in the table does not weight the results; the first feature is not weighted any more than the last.</li>
+                                <li>As a best practice, remove punctuation (other than apostrophes ' ) from your data. This is because commas, periods, and other punctuation rarely add meaning to the training data, but are treated as meaningful elements by the learning engine. For example, "end." is not matched to "end".</li>
+                            </div>
+                            <div style="padding-top: 5%">
+                                <strong>Making requests to API:</strong> Now that we have our training data in Cloud Storage and a host to make requests to, we can train our model. The following is an example post request that will send our training data to the API.
+                            </div>
+                        </div>
+                        <div class="media" style="vertical-align: center">
+                            <img src="images/post.jpg" width="80%" height="80%" alt="post">
+                        </div>
+                        <div style="padding-top: 5%" class="text-justify">
+                            <p>
+                                <strong>Post: </strong> This is a post request. It will take a reference to the API using the project ID and the desired model name. In this case it will pass two JSON objects. The first is a function ID that specifies how the API will handdle the results. The second is a storage location for the training data. The key for this JSON object is a specified location name and the value is the file path to the training data. In this case the name of the Google Cloud bucket and the <em style="color: blue">language_id.txt</em> file. 
+                            </p>
+                        </div>
+                        <div class="media" style="vertical-align: center">
+                            <img src="images/response.jpg" width="110%" height="110%" alt="response">
+                        </div>
+                        <div style="padding-top: 5%" class="text-justify">
+                            <p>
+                                <strong>Response </strong> If the post is successful the recieved response in the console will look like this. The JSON objects in the response represent the kind of API post, the machine learning model id and name. The HTTP reference. And the storage location of the training data.  
+                            </p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confirm Training Section -->
+    <section id="confirm-train" class="confirm-train-section" style="padding-top: 5%">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Confirm Training: Get</h1>
+                    <div class="text-justify" style="padding-top: 10%">
+                        <p>
+                            <strong>Double Check:</strong> In the last section we posted our training data to the Prediction API, now we need to see if our machine learning model will work when trained with that data. To do this we'll make a get request. 
+                        </p>
+                    </div>
+                    <div>
+                        <div class="media" style="vertical-align: center">
+                            <img src="images/get.jpg" width="100%" height="100%" alt="get">
+                        </div>
+                        <div style="padding-top: 5%" class="text-justify">
+                            <p>
+                                <strong>Get Request</strong> We will be making a get request to the API using the above code. When we look at the HTTP path a few things are needed to get the riht information from the request. The first section is the address reference of the Prediction API. Next we have projects which is part of the path to determine what project context we are using. Then we have the project ID which was previously specified. Then we have the file area that holds our trained machine learning models. Finally we target the specific machine learning model by name.  
+                            </p>
+                        </div>
+                          <div class="media" style="vertical-align: center">
+                            <img src="images/getresponse.jpg" width="100%" height="100%" alt="getresponse">
+                        </div>
+                        <div style="padding-top: 5%" class="text-justify">
+                            <p>
+                                <strong>Response: </strong>If the get request is successful we will recieve a response from the API that looks like this. The response is comprised of the following JSON objects. The first three are the same as the Post response objects. They pertain to the model that was called and the location of that model. The next two obects deal with the status codes regarding the creation and training of the model. The subcategory <em style="color: green">"modelInfor"</em>, holds information regarding the model type, size, and accuracy. The final JSON object is what we're looking for the <em style="color: green">"trainingStatus"</em> key holds the status of the machine learning model training. If the value is <em style="color: green">"DONE"</em> we have been successful in training the model with the data and the training is complete. If the status is <em style="color: green">"RUNNING"</em> the training is still in progress.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Query Section -->
+    <section id="query" class="query-section" style="padding-top: 5%">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Send Query</h1>
+                    <div class="text-justify" style="padding-top: 5%">
+                        <p>
+                            <strong>Try it!:</strong> Now that we have our machine learning model trained we can ask it some questions and it will hopefully make judgements or predictions based on its training. To try it, let's send a query to the API. 
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="media">
+                        <img src="images/querypost.jpg" width="100%" height="100%" alt="querypost">
+                    </div>
+                    <div class="text-justify" style="padding-top: 5%">
+                        <p>
+                          <strong>Post:</strong> Above is our post request. It is similar to our initial post request we used to input our training data with the exception of adding a method on the end called predict.This will tell the machine learning to process our input with the prediction method. The post is also passing some information. The information passed in this case is a JSON object with the <em style="color: green">"input"</em> key and and a value which is also a key named <em style="color: green">"csvinstance"</em>. <em><u>That</u></em> key's value is a string of french words. For our model and the information we will pass in the post we should recieve a response with identified languages based on the input strings.   
+                        </p>
+                    </div>
+                    <div class="media">
+                        <img src="images/queryresponse.jpg" width="100%" height="100%" alt="queryresponse">
+                    </div>
+                      <div class="text-justify" style="padding-top: 5%">
+                        <p>
+                          <strong>Response:</strong> Now we can see if our machine learning model is functional. The response will tell us if the model was successful in predicting the language. Let's look at the contents. The first few lines we've seen before. The next line, <em style="color: green">""outputLabel": "French"</em> is what we're looking for. This tells us that indeed the machine learning model we created has predicted the correct language. The following lines of the response are essentially checkboxes for the machine learning model. According to it's training the input string was not a match for english or spanish but it was for french. Thus the key <em style="color: green">"score"</em> is set to <em style="color: green">"1.000000"</em>.   
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Cleanup Section -->
+    <section id="cleanup" class="cleanup-section" style="padding-top: 5%">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Cleanup</h1>
+                    <div class="text-justify" style="padding-top: 5%">
+                        <p>
+                            <strong>Almost done:</strong> The last thing we need to do is clean up after ourselves. The reason being that if we do not delete our model and we may be susceptable to charges if the model is used in the API. To do this we can follow the following three steps.
+                        </p>
+                        <p style="padding-top: 5%">
+                            <strong>Step 1:</strong> We need to delete the predictive model. We can do this one of two ways the first is calling the <code>prediction.trainedmodels.delete</code> method somewhere at the end of our program when we have finished using the model. The second is following the link below.
+                            <div style="padding-top: 5%"><a href="https://developers.google.com/apis-explorer/#p/prediction/v1.6/prediction.trainedmodels.delete" class="btn btn-info" role="button">Enable Billing</a>
+                            </div>
+                        </p>
+                        <p style="padding-top: 5%">
+                            <strong>Step 2:</strong> Navigate to the Google Cloud Storage Browser. You can follow the link below. 
+                            <div style="padding-top: 5%"><a href="https://console.cloud.google.com/storage/browser" class="btn btn-info" role="button">Cloud Storage Browser</a>
+                            </div>
+                        </p>
+                        <p style="padding-top: 5%">
+                            <strong>Step 3: </strong> Navigate to the storage bucket created for this guide and click the checkbox next to the bucket. Now click <u><strong>Delete</strong></u>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Learn More Section -->
+    <section id="implement" class="implement-section" style="padding-top: 5%">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Learn More</h1>
+                        <h4 style="padding-top: 5%">Here is a list of links with more information about Google's Prediction API</h4>
+                        <div style="vertical-align: center" style="padding-top: 5%">
+                            <li style="padding-top: 2%">Ways to use:</li><a href="https://cloud.google.com/prediction/docs/scenarios" class="btn btn-info" role="button">Use Cases</a>
+                             <li style="padding-top: 2%">More development information:</li><a href="https://cloud.google.com/prediction/docs/developer-guide" class="btn btn-info" role="button">Developer Guide</a>
+                              <li style="padding-top: 2%">Code samples in Java and Python:</li><a href="https://cloud.google.com/prediction/docs/libraries.html#featuredsamples" class="btn btn-info" role="button">Code Samples</a>
+                               <li style="padding-top: 2%">Google API's:</li><a href="https://cloud.google.com/products" class="btn btn-info" role="button">API's</a>
+                                <li style="padding-top: 2%">Node.js Documentation:</li><a href="https://www.npmjs.com/package/@google-cloud/prediction" class="btn btn-info" role="button">Node</a>
+                                 <li style="padding-top: 2%">Google App Engine documentation:</li><a href="https://cloud.google.com/appengine/docs/" class="btn btn-info" role="button">App Engine</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section id="end" class="end-section" style="padding-top: 10%">
+        <div class="container">
+            <div class="row">
+                <div class="col-med-6" style="vertical-align: ">
+                    <div class="media">
+                         <img src="images/magic.jpg" width="30%" height="30%" alt="magic">
+                    </div>
+                    <ul style="list-style: none">
+                        <li>Author Benjamin Fondell</li>
+                        <li>5/28/2017</li>
+                        <li>CS 290: Web Development</li>
+                        <li>fondellb@oregonstate.edu</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+
+</body>
+
+</html>

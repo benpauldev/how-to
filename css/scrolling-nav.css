@@ -1,0 +1,164 @@
+/*!
+ * Start Bootstrap - Scrolling Nav (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+    width: auto;
+    height: auto;
+}
+
+html {
+    width: auto;
+    height: auto;
+}
+
+@media(min-width:1000px) {
+    .navbar {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+@media screen and (min-width: 800px) { /*The following CSS runs only for displays with a width (in pixels) of more than 800px*/
+    html {
+        background-color: white;
+    }
+}
+
+@media screen and (max-width: 800px) { /*The following CSS runs only for displays with a width (in pixels) of less than 800px*/
+    html {
+        background-color: white;
+    }
+}
+
+/* Demo Sections - You can use these as guides or delete them - the scroller will work with any sort of height, fixed, undefined, or percentage based.
+The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children 
+of those sections to manage the look and feel of the site. */
+
+.wrapper{
+    min-width: 1002px;
+}
+
+.intro-section {
+    height: 100%;
+    padding-top: 15%;
+    text-align: center;
+    background: #fff;
+    margin: 2%;
+    position: relative;
+    padding-bottom: 15%;
+}
+
+.setup-section {
+    height: 85%;
+    padding-top: 30%;
+    text-align: center;
+    background: #eee;
+    margin: auto;
+    position: relative;
+    padding-bottom: 15%;
+}
+
+.create-data-section {
+    height: 90%;
+    padding-top: 30%;
+    text-align: center;
+    background: #fff;
+    margin: auto;
+    position: relative;
+    padding-bottom: 15%;
+}
+.google-engine-section {
+    height: 170%;
+    padding-top: 30%;
+    text-align: center;
+    background: #eee;
+    margin: auto;
+    position: relative;
+    padding-bottom: 15%;
+}
+
+.train-model-section {
+    height: 130%;
+    padding-top: 30%;
+    text-align: center;
+    background: #fff;
+    margin: auto;
+    position: relative;
+    padding-bottom: 15%;
+}
+
+.confirm-train-section {
+    height: 95%;
+    padding-top: 30%;
+    text-align: center;
+    background: #eee;
+    margin: auto;
+    position: relative;
+    padding-bottom: 15%;
+}
+
+.query-section {
+    height: 100%;
+    padding-top: 30%;
+    text-align: center;
+    background: #fff;
+    margin: auto;
+    position: relative;
+    padding-bottom: 15%;
+}
+
+.cleanup-section {
+    height: 75%;
+    padding-top: 30%;
+    text-align: center;
+    background: #eee;
+    margin: auto;
+    position: relative;
+    padding-bottom: 15%;
+}
+
+.implement-section {
+    height: 65%;
+    padding-top: 30%;
+    text-align: center;
+    background: #fff;
+    margin: auto;
+    position: relative;
+    padding-bottom: 15%;
+}
+
+.end-section {
+    height: 55%;
+    padding-top: 30%;
+    text-align: center;
+    background: #eee;
+    margin: auto;
+    position: relative;
+    padding-bottom: 15%;
+   
+}
+
+.page-scroll{
+
+    font-size: 88%
+}
+
+.html{
+    height: auto;
+    width: auto;
+    min-width: 1000px;
+   
+}   
+
+
+
+
+
